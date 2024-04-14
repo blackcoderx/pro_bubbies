@@ -1,0 +1,30 @@
+
+
+<div class="recent flex flex-col gap-2">
+  <p class="recent-act uppercase font-medium text-slate-50">Recent Activities</p>
+
+
+    {% for message in room_messages %}
+
+      <div class="activity bg-white p-2">
+        <small class="message-owner flex gap-2"
+        style="font-size: 0.75rem;">
+          <a href="{% url 'profile' message.user.id%}">
+          @{{message.user}}
+          </a>   
+          {{message.created|timesince}}
+        </small>
+        <!-- put a url that links to room  , remember to add messag.room.id in the url -->
+        <small class="message-room">chat to "{{message.room}}"</small> 
+        <p class="message-body">{{message.body}}</p>
+
+        
+        {% if request.user == message.user %}
+        <a href="{% url 'delete-message' message.id %}" class="text-xs">Delete</a>
+        {%endif%}
+        
+      </div>
+
+    {% endfor %}
+
+  </div>

@@ -1,0 +1,17 @@
+@import url(./main.css);
+
+
+.recent{
+  background-color: var(--main-color);
+  border-radius: var(--radius);
+  margin-right: var(--margin-half);
+  padding: var(--padding-half);
+
+}
+.recent-act{
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  background-color: var(--main-color);
+  border-bottom: 1px solid #1FB8FF;
+  padding-bottom: var(--padding-half);
+}

@@ -1,0 +1,20 @@
+
+
+<div class="sidebar-b"
+  style="height: 75dvh;">
+  <p class="browse text-slate-50">Browse Topics</p>
+
+
+  <div class="topics flex flex-col gap-1 ">
+
+    <div class="all text-slate-50">
+      <a href="{% url 'room'%}">All {{topics.count}}</a>
+    </div>
+
+    {% for topic in topics %}
+      <div class="other-topics text-slate-50">
+        <a href="{% url 'room'%}?q={{topic.name}}">{{topic.name}} <span>{{topic.room_set.all.count}}</span></a>
+      </div>
+    {% endfor %}
+  </div>
+</div>

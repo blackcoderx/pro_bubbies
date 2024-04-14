@@ -1,0 +1,9 @@
+{% extends 'base/base.html'%}
+{% block content%}
+  <form action="" method="POST">
+    {% csrf_token %}
+    <p>your bubbies are still there, Are you sure you want to delete</p>
+    <a href="{{request.META.HTTP_REFERER}}">Go back</a>
+    <input type="submit" value="Confirm">
+  </form>
+{% endblock content%}

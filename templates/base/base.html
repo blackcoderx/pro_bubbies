@@ -1,0 +1,141 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Righteous&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+
+
+    <link rel="stylesheet" href="{% static 'styles/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/room.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/topics.css' %}" />
+    <link rel="stylesheet" href="{% static 'styles/activities.css' %}" />
+    <title>Bubbies</title>
+  </head>
+
+  <body class="flex-box">
+    
+    <nav class="flex justify-between items-center px-6 py-4 w-full h-14">
+      <div class="logo flex items-center gap-2">
+        <a href="{%url 'home-page'%}" class="flex items-center gap-2">
+        <img
+          src="{% static 'images/logo.png' %}"
+          alt="logo of Bubbies"
+          class="w-12"
+        />
+
+        <h1 class="app-name text-2xl	">Bubbies</h1>
+        </a>
+      </div>
+
+      <form action="{% url 'room' %}">
+        <input
+          type="text"
+          name="q"
+          placeholder="Search Rooms....."
+          class=" search h-6 rounded-lg	w-80 p-4 outline-0"
+        />
+      </form>
+
+      <div class="nav-links flex gap-4">
+        {%if request.user.is_authenticated %}
+        <a href="{% url 'logout' %}" class="link text-base">Log out</a>
+
+        {% else%}
+        <a href="{% url 'login'%}" class="link text-base">Log in</a>
+        <a href="{% url 'register'%}" class="link text-base ">Sign up</a>
+        {%endif%}
+      </div>
+    </nav>
+
+
+ 
+
+
+      {% block content%}
+      <main>
+
+                    
+        <aside style="height: 90dvh;">
+          {% include 'components/topics.html'%}
+
+        </aside>
+
+        <div class="flex flex-col gap-4 rooms">
+            <div class="flex flex-row justify-between items-center">
+              
+              <div class="flex flex-col head">
+                <p>Rooms</p>
+                <small>{{no_rooms}} rooms availble</small>
+              </div>
+              
+
+              <a href="{% url 'create-room'%}">
+                <div class="flex pre-btn items-center gap-1">
+                  <img
+                  src="{% static 'images/plus.png' %}"
+                  alt="logo of Bubbies"
+                  class="w-4 h-4"
+                />
+                  <p>Create a Room</p>
+                </div>
+              </a>
+            </div>
+
+            {% include 'components/feed.html'%}
+        </div>
+
+        <div class="flex flex-col gap-4"
+          style="height: 90dvh; overflow-y: scroll;">
+
+          {% include 'components/activities.html'%}
+
+        </div>
+      </main>
+      {%endblock content%}
+      
+
+
+  </body>
+</html>
+
+
+<!-- 
+        <div class="pre-rooms">
+
+          <div class="flex justify-between ">
+
+            <a href="{% url 'room' %}">
+              <p class="pre-name">Rooms</p>
+            </a>
+
+            <a href="{% url 'create-room'%}">
+              <div class="flex pre-btn items-center gap-1">
+                <img
+                src="{% static 'images/plus.png' %}"
+                alt="logo of Bubbies"
+                class="w-4 h-4"
+              />
+                <p>Create a Room</p>
+              </div>
+            </a>
+          </div>
+
+          <div>
+            {% for room in rooms %}
+            <a href="{%url 'profile' room.host.id %}">@{{room.host.username}}</a>
+            <p>id: {{room.id}}---- <a href="{% url 'room-page' room.id%}">{{room.name}}</a></p>
+            <p>{{room.topic.name}}</p>
+            <hr>
+            {% endfor %}
+          </div>
+        </div> -->

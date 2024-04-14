@@ -1,0 +1,19 @@
+{% extends 'base/base.html'%}
+{% block content%}
+  <h1>{{ user.username}}</h1>
+
+
+  {% if request.user == user%}
+  <a href="{% url 'update-user' %}">Edit</a>
+  {% endif %}
+  <div class="profile-container">
+
+    <div>  
+      {% include 'components/feed.html'%}
+    </div>
+
+
+
+  </div>
+{% endblock content%}
+

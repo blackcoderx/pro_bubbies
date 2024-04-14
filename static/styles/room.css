@@ -1,0 +1,45 @@
+/* @import url(./main.css); */
+
+
+:root{
+  --main-color: #13293D;
+  --p-color:#1FB8FF;
+  --accent-color: #D8DAD3;
+  --radius:0.5em;
+  --bg-color:#114C6A;
+  --margin-half : 0.5em;
+  --padding-full: 1em;
+  --padding-half: 0.5em;
+  --font: "Rubik", sans-serif;
+  }
+  
+.rooms{
+  /* background-color: var(--main-color); */
+  border-radius: var(--radius);
+  padding: var(--padding-half);
+  min-height: 100dvh;
+}
+
+.room-sidebar{
+  background-color: var(--main-color);
+  padding: var(--padding-half);
+  border-radius: var(--radius);
+  margin-left: var(--margin-half);
+  height: 85dvh;
+  /* position: fixed; */
+}
+
+
+.head p{
+  font-family: var(--font);
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.head small{
+  font-family: var(--font);
+  color: var(--accent-color);
+}
+

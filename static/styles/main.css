@@ -1,0 +1,150 @@
+
+
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 300 to 900
+
+.rubik-<uniquifier> {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+
+:root{
+  --main-color: #13293D;
+  --p-color:#1FB8FF;
+  --accent-color: #D8DAD3;
+  --radius:0.5em;
+  --bg-color:#114C6A;
+  --margin-half : 0.5em;
+  --padding-full: 1em;
+  --padding-half: 0.5em;
+  --font: "Rubik", sans-serif;
+  }
+
+
+  *{
+    font-family: var(--font);
+    
+  }
+
+
+.flex-box{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  min-height: 100dvh;
+  background-color: var(--bg-color);
+}
+
+nav{
+  width: 100%;
+  height: 3em;
+  background-color: var(--main-color);
+
+}
+
+
+
+main{
+  display: grid;
+  grid-template-columns: 11em 4fr 1fr;
+  gap: 1em;
+}
+
+
+
+aside{
+  background-color: var(--main-color);
+  border-radius: var(--radius);
+  margin-left: var(--margin-half);
+  padding: var(--padding-half);
+
+}
+
+
+
+
+.pre-rooms{
+  grid-column: 2/3;
+  width: 100%;
+  background-color: var(--main-color);
+  border-radius: var(--radius);
+  padding: var(--padding-full);
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.pre-btn{
+  padding: var(--padding-half);
+  background-color: #1FB8FF;
+  border-radius: var(--radius); 
+
+}
+
+.pre-name{
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.pre-btn>p{
+  font-family: var(--font);
+  font-weight: 500;
+}
+
+/* 
+.top{
+
+  background-color: var(--main-color);
+  border-radius: var(--radius);
+  margin-right: var(--margin-half);
+}
+
+
+
+.top>p{
+  text-transform: uppercase;
+  font-family: var(--font);
+  font-weight: 500;
+  color: var(--accent-color);
+  text-align: center;
+} */
+
+.app-name{
+  font-family: "Righteous", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--accent-color);
+}
+
+.search{
+  background-color:var(--accent-color) ;
+  opacity: 5;
+  outline: none;
+}
+
+.link{
+  font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+  color: var(--accent-color);
+  padding: 0.3em ;
+  padding-inline: var(--padding-half);
+}
+
+
+
+
+
+.side-link{
+  background-color: var(--accent-color);
+  padding: var(--padding-half);
+  border-radius: var(--radius);
+  font-family: var(--font);
+  font-weight: 500;
+}
+

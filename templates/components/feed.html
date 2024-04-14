@@ -1,0 +1,14 @@
+
+<div class="text-slate-50 gap-2 "
+style="display: grid; grid-template-columns: repeat(3, 1fr);">
+  {% for room in rooms %}
+  <div class="p-2" 
+  style="border:  3px solid #1FB8FF; border-radius: 10px;">
+    <a href="{%url 'profile' room.host.id %}" title="host">b/{{room.host.username}}</a>
+    <p><a href="{% url 'room-page' room.id%}">{{room.name}}</a></p>
+    <p>{{room.participants.all.count}} bubbies</p>
+    <p>#{{room.topic.name}}</p>
+  </div>
+  {% endfor %}
+
+</div>
