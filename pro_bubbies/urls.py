@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.urls import path,include
 from base_app import views as base
 from chatroom import views as chat_view
+import static
+from pro_bubbies import settings
 
 
 urlpatterns = [
@@ -15,3 +17,6 @@ urlpatterns = [
     path('create-room/',chat_view.createroom,name='create-room'),
     path('room/',include('chatroom.urls')),
 ]
+
+# urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+# urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
